@@ -36,14 +36,15 @@ public class VoiceLauncher2 {
         
         //Check if recognizer recognized the speech
         while ((result = recognize.getResult()) != null) {
-            
+            //Notify user to begin speaking
+            System.out.println("Begin Speech Input");
             //Get the recognized speech
             String command = result.getHypothesis();
             String work = null;
             Process p;
             System.out.println(command);
             
-            //Some Extra Commands from my Corpus File
+            //Assign commands to some functions
             if(command.equalsIgnoreCase("open search")) {
                   p = Runtime.getRuntime().exec("cmd /c start chrome.exe www.google.com");
             }
